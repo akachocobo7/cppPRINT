@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
-//#include <string> 
-//#include <map>
-//#include <set>
+
+#include <string> 
+#include <map>
+#include <set>
 
 using namespace std;
 
@@ -32,16 +33,15 @@ template <class Head, class... Tail> void print(Head&& head, Tail&&... tail) {
 	print(forward<Tail>(tail)...);
 }
 
-
 int main() {
 	cout << "ok???" << endl;
 
-	/*string s = "print";
-	vector<double> v(5, 7.3);*/
+	string s = "print";
+	vector<double> v(5, 7.3);
 	vector<vector<int>> vv(2, vector<int>(3, 8));
 	print(vv);
 
-	/*map<string, int> mp;
+	map<string, int> mp;
 	mp["two"] = 2;
 	mp["seven"] = 7;
 	mp["ten"] = 10;
@@ -62,11 +62,8 @@ int main() {
 	print(s, v);
 	print(vv);
 	print();
-	print(mp, st, vmp);*/
-
-	int N;
-	cin >> N;
-
+	print(mp, st, vmp);
+	
 	return 0;
 }
 
