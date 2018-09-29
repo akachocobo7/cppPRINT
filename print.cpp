@@ -1,8 +1,8 @@
 #include <iostream>
-#include <string> 
 #include <vector>
-#include <map>
-#include <set>
+//#include <string> 
+//#include <map>
+//#include <set>
 
 using namespace std;
 
@@ -18,9 +18,8 @@ template <template <class tmp>  class T, class U> ostream &operator<<(ostream &o
 	o << "{"; for (auto itr = obj.begin(); itr != obj.end(); ++itr)o << (itr != obj.begin() ? ", " : "") << *itr; o << "}"; return o;
 }
 
-template <class Head, class... Tail> void print(Head&& head, Tail&&... tail) {
-	cout << head << " ";
-	print(forward<Tail>(tail)...);
+void print(void) {
+	cout << endl;
 }
 
 template <class Head> void print(Head&& head) {
@@ -28,16 +27,21 @@ template <class Head> void print(Head&& head) {
 	print();
 }
 
-void print() {
-	cout << endl;
+template <class Head, class... Tail> void print(Head&& head, Tail&&... tail) {
+	cout << head << " ";
+	print(forward<Tail>(tail)...);
 }
 
-int main() {
-	string s = "print";
-	vector<double> v(5, 7.3);
-	vector<vector<int>> vv(2, vector<int>(3, 8));
 
-	map<string, int> mp;
+int main() {
+	cout << "ok???" << endl;
+
+	/*string s = "print";
+	vector<double> v(5, 7.3);*/
+	vector<vector<int>> vv(2, vector<int>(3, 8));
+	print(vv);
+
+	/*map<string, int> mp;
 	mp["two"] = 2;
 	mp["seven"] = 7;
 	mp["ten"] = 10;
@@ -58,7 +62,7 @@ int main() {
 	print(s, v);
 	print(vv);
 	print();
-	print(mp, st, vmp);
+	print(mp, st, vmp);*/
 
 	int N;
 	cin >> N;
