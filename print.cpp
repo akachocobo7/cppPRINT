@@ -7,6 +7,14 @@
 
 using namespace std;
 
+template <class T, class U>ostream &operator<<(ostream &o, const map<T, U>&obj) {
+    o << "{"; for(auto &x : obj) o << " {" << x.first << " : " << x.second << "}" << ","; o << " }"; return o;
+}
+
+template <class T>ostream &operator<<(ostream &o, const set<T>&obj) {
+    o << "{"; for (auto itr = obj.begin(); itr != obj.end(); ++itr) o << (itr != obj.begin()? ", " : "") << *itr; o << "}"; return o;
+}
+
 template <class T>ostream &operator<<(ostream &o, const vector<T>&obj) {
 	o << "{"; for (int i = 0; i < (int)obj.size(); ++i)o << (i > 0 ? ", " : "") << obj[i]; o << "}"; return o;
 }
